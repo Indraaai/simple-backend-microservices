@@ -19,6 +19,7 @@ func SetupRouter(
 	orders := router.Group("/orders")
 	{
 		orders.POST("", orderHandler.Create)
+		orders.GET("/:id", orderHandler.GetByID)
 	}
 
 	return router
